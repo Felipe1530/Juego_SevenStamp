@@ -7,43 +7,42 @@ namespace CompleteProject
 {
     public class PlayerHealth : MonoBehaviour
     {
-        public int startingHealth = 100;                            // The amount of health the player starts the game with.
-        public int currentHealth;                                   // The current health the player has.
-        public Slider healthSlider;                                 // Reference to the UI's health bar.
-        public Image damageImage;                                   // Reference to an image to flash on the screen on being hurt.
-        public AudioClip deathClip;                                 // The audio clip to play when the player dies.
-        public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
-        public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
-
+        public int startingHealth = 100;                            
+        public int currentHealth; //Decremanta con el daño al jugador
+        public Slider healthSlider;//Decrementa energia 
+        public Image damageImage;                                   
+        public AudioClip deathClip;//Sonido de golpes al personaje
+        public float flashSpeed = 5f;                               
+        public Color flashColour = new Color(1f, 0f, 0f, 0.1f);  
 
         Animator anim;                                              // Reference to the Animator component.
         AudioSource playerAudio;                                    // Reference to the AudioSource component.
         PlayerMovement playerMovement;                              // Reference to the player's movement.
-        PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
+       // PlayerShooting playerShooting;                              // Reference to the PlayerShooting script.
         bool isDead;                                                // Whether the player is dead.
         bool damaged;                                               // True when the player gets damaged.
 
 
-        void Awake ()
+        void Awake ()//Inicia referencias a componentes 
         {
             // Setting up the references.
             anim = GetComponent <Animator> ();
             playerAudio = GetComponent <AudioSource> ();
             playerMovement = GetComponent <PlayerMovement> ();
-            playerShooting = GetComponentInChildren <PlayerShooting> ();
+            //playerShooting = GetComponentInChildren <PlayerShooting> ();
 
             // Set the initial health of the player.
             currentHealth = startingHealth;
         }
 
 
-        void Update ()
+        void Update ()//Hcer animacion de la imagen que refleja el daño
         {
             // If the player has just been damaged...
             if(damaged)
             {
                 // ... set the colour of the damageImage to the flash colour.
-                damageImage.color = flashColour;
+                damageImage.color = flashColour;//color de imagen de pinta pantalla. color definido
             }
             // Otherwise...
             else
@@ -57,7 +56,7 @@ namespace CompleteProject
         }
 
 
-        public void TakeDamage (int amount)
+        public void TakeDamage (int amount)//Hacer daño al personaje
         {
             // Set the damaged flag so the screen will flash.
             damaged = true;
@@ -85,8 +84,8 @@ namespace CompleteProject
             // Set the death flag so this function won't be called again.
             isDead = true;
 
-            // Turn off any remaining shooting effects.
-            playerShooting.DisableEffects ();
+         
+            //playerShooting.DisableEffects ();//off
 
             // Tell the animator that the player is dead.
             anim.SetTrigger ("Die");
@@ -97,7 +96,7 @@ namespace CompleteProject
 
             // Turn off the movement and shooting scripts.
             playerMovement.enabled = false;
-            playerShooting.enabled = false;
+            //playerShooting.enabled = false;
         }
 
 
