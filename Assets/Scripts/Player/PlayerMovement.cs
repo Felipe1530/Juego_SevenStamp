@@ -18,10 +18,10 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void FixedUpdate()//SE ejecuta para ciclo del motor de fisica
+    void FixedUpdate()//Se ejecuta para ciclo del motor de fisica
     {
         float h = Input.GetAxisRaw("Horizontal");//Se pulza tecla izq o der
-        float v = Input.GetAxisRaw("Vertical");
+        float v = Input.GetAxisRaw("Vertical");//Se pulza tecla arr o abaj
         Move(h , v);
         Turning();
         animating(h , v);
