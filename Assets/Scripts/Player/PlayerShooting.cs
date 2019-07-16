@@ -8,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
 
 
     float timer;
-    Ray shootRay = new Ray();
+    Ray shootRay; //= new Ray();
     RaycastHit shootHit;//Resulktado del objeto colisionado
     int shootableMask;//Las capas que colisiona
     ParticleSystem gunParticles;
