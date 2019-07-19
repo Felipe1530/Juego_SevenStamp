@@ -2,9 +2,9 @@
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int startingHealth = 100;
-    public int currentHealth;
-    public float sinkSpeed = 2.5f;
+    public int startingHealth = 100;//vida inicial
+    public int currentHealth;//vida que decrementa
+    public float sinkSpeed = 2.5f;//velocidad con la que cae al suelo
     public int scoreValue = 10;
     public AudioClip deathClip;
 
@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
     ParticleSystem hitParticles;
     CapsuleCollider capsuleCollider;
     bool isDead;
-    bool isSinking;
+    bool isSinking;//si el enemigo tiene que desaparecer
 
 
     void Awake ()
@@ -23,7 +23,6 @@ public class EnemyHealth : MonoBehaviour
         enemyAudio = GetComponent <AudioSource> ();
         hitParticles = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
-
         currentHealth = startingHealth;
     }
 
@@ -60,7 +59,7 @@ public class EnemyHealth : MonoBehaviour
     {
         isDead = true;
 
-        capsuleCollider.isTrigger = true;
+        capsuleCollider.isTrigger = true;//Se desactiva su callider 
 
         anim.SetTrigger ("Dead");
 
@@ -71,10 +70,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void StartSinking ()
     {
+        
         GetComponent <UnityEngine.AI.NavMeshAgent> ().enabled = false;
         GetComponent <Rigidbody> ().isKinematic = true;
         isSinking = true;
-        //ScoreManager.score += scoreValue;
+        ScoreManager.score += scoreValue;//incrementa la puntuacion a la hora de atacar
         Destroy (gameObject, 2f);
     }
 }

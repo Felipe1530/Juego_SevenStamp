@@ -8,7 +8,7 @@ public class PlayerShooting : MonoBehaviour
 
 
     float timer;
-    Ray shootRay; //= new Ray();
+    Ray shootRay = new Ray();
     RaycastHit shootHit;//Resulktado del objeto colisionado
     int shootableMask;//Las capas que colisiona
     ParticleSystem gunParticles;
@@ -73,7 +73,7 @@ public class PlayerShooting : MonoBehaviour
             EnemyHealth enemyHealth = shootHit.collider.GetComponent <EnemyHealth> ();//acceder al collider que se colisiono
             if(enemyHealth != null)
             {
-                enemyHealth.TakeDamage (damagePerShot, shootHit.point);//veectos3 para ver donde se colisiono
+                enemyHealth.TakeDamage (damagePerShot, shootHit.point);//vectos3 para ver donde se colisiono
             }
             gunLine.SetPosition (1, shootHit.point);
         }

@@ -11,7 +11,7 @@ public class EnemyAttack : MonoBehaviour
     GameObject player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
-    bool playerInRange;
+    bool playerInRange;//verificar si el jugador esta cerca
     float timer;
 
 

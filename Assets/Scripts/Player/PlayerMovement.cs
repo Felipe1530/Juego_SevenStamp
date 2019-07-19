@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRigidbody;
     int floorMask;
     float camRayLength = 100f;//La longitug de lo que lanza la arma
+    
 
     void Awake()//obtener las referencias de los objetos componentes
     {
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         movement.Set(h, 0f, v);
         movement = (movement.normalized * speed * Time.deltaTime);//Se normaliza el vector
         playerRigidbody.MovePosition(transform.position + movement);//Ya podemos mover el personaje
+        
     }
     void Turning()
     {
@@ -46,11 +48,14 @@ public class PlayerMovement : MonoBehaviour
             playerRigidbody.MoveRotation(newRotation);
         }
     }
+
+   
     void animating (float h, float v)
     {
         bool idle = ((v == 0) && (h == 0));
         anim.SetBool("IsWalking", !idle);
     }
+
 
     
 }
