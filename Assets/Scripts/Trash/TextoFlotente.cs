@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TextoFlotente : MonoBehaviour
 {
-    public float TiempoDeVida = 2;
+    public float TiempoDeVida = 1000;
     public GameObject TextoFlotantePrefab;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class TextoFlotente : MonoBehaviour
     {
         GameObject texto = Instantiate(TextoFlotantePrefab);
         texto.transform.position = new Vector3(this.gameObject.transform.position.x,
-            this.gameObject.transform.position.y,
+            this.gameObject.transform.position.y+4,
             this.gameObject.transform.position.z);
     }
 }

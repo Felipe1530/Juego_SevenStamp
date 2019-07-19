@@ -187,6 +187,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7438234134449656875, guid: 6bf803920ff47cf43a2a1902d86f6cb3,
+        type: 3}
+      propertyPath: m_Text
+      value: "Es Aqu\xED donde \nse debe poner \ntu reciclaje...."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438234134449656875, guid: 6bf803920ff47cf43a2a1902d86f6cb3,
+        type: 3}
+      propertyPath: m_TabSize
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bf803920ff47cf43a2a1902d86f6cb3, type: 3}
 --- !u!4 &126066972 stripped
@@ -537,11 +547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10875500, guid: ad67cddd729fb4342be2063a3f5ad7cc, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 2.3510647e-38
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 10875500, guid: ad67cddd729fb4342be2063a3f5ad7cc, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 2.3510647e-38
+      value: 3e-45
       objectReference: {fileID: 0}
     - target: {fileID: 10875500, guid: ad67cddd729fb4342be2063a3f5ad7cc, type: 3}
       propertyPath: m_BoundingSphereOverride.z
@@ -575,7 +585,7 @@ MonoBehaviour:
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 10
-  deathClip: {fileID: 0}
+  deathClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
 --- !u!114 &576805475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,9 +844,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 0}
-  damageImage: {fileID: 0}
-  deathClip: {fileID: 0}
+  healthSlider: {fileID: 248769272}
+  damageImage: {fileID: 1959452001}
+  deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!114 &1278084384
@@ -1448,11 +1458,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c89f7ad2ac137d4ab10b8c0be44db9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.326702
+      value: 19.12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c89f7ad2ac137d4ab10b8c0be44db9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25206
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c89f7ad2ac137d4ab10b8c0be44db9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1492,15 +1502,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c89f7ad2ac137d4ab10b8c0be44db9c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.4040678
+      value: 6.7638674
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c89f7ad2ac137d4ab10b8c0be44db9c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.8358207
+      value: 5.817022
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7c89f7ad2ac137d4ab10b8c0be44db9c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.0549273
+      value: 4.517844
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c89f7ad2ac137d4ab10b8c0be44db9c, type: 3}
